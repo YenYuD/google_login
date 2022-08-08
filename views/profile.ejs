@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ("partials/header") %>
+        <title>Login</title>
+    </head>
+    <body>
+        <%- include ("partials/nav") %>
+        <h1>Welcome to <%= user.displayName %>'s page</h1>
+
+        <img src="<%= user.photos[0].value %> " alt="" />
+    </body>
+</html>

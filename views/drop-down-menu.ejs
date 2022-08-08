@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <%- include ("partials/header") %>
+    </head>
+    <body>
+        <%- include ("partials/nav") %>
+
+        <div class="container">
+            <h2>居住地址</h2>
+            <div class="card">
+                <div class="card-header">城市：</div>
+                <div class="mb3">
+                    <select name="city" id="city" class="form-control">
+                        <option value="">選擇城市</option>
+                        <% for(let count = 0 ; count <
+                        city_data.length;count++){ %>
+                        <option value="<% city_data[count] %>">
+                            <%= city_data[count] %>
+                        </option>
+                        <% }%>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">區域：</div>
+                <div class="mb3">
+                    <select name="area" id="area" class="form-control">
+                        <option value="">選擇區域</option>
+                        <% let area = []; for(let count = 0 ; count <
+                        area.length;count++){ %>
+                        <option value="<% area[count] %>">
+                            <%= area[count] %>
+                        </option>
+                        <% }%>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document
+                    .querySelector("#city")
+                    .addEventListener("change", function (e) {
+                        console.log(area);
+                        area = data.filter(
+                            (item) => (item.City = e.target.value)
+                        );
+                    });
+            });
+        </script>
+    </body>
+</html>
